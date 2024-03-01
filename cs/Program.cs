@@ -11,5 +11,21 @@ class MainMethod
         Console.WriteLine($"Array = {String.Join(",", arr)}");
         Console.WriteLine($"Target = {target}");
         Console.WriteLine("Index of target " + target + " is: " + index);
+
+        Console.WriteLine("Coding Challenge - Luhn Algorithm");
+        string cardNum = "4351943610957779";
+        bool valid = LuhnValidation.ValidateCard(cardNum);
+        string response = valid ? ($"Card Number '{cardNum}' is valid"): ($"Card Number '{cardNum}' is not valid");
+        Console.WriteLine(response);
+        
+        cardNum = "4351943610957778";
+        valid = LuhnValidation.ValidateCard(cardNum);
+        response = valid ? ($"Card Number '{cardNum}' is valid"): ($"Card Number '{cardNum}' is not valid");
+        Console.WriteLine(response);
+
+        cardNum = "This is a test";
+        valid = LuhnValidation.ValidateCard(cardNum);
+        response = valid ? ($"Card Number '{cardNum}' is valid"): ($"Card Number '{cardNum}' is not valid");
+        Console.WriteLine(response);
     }
 }
